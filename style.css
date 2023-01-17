@@ -12,9 +12,14 @@ body {
 .display_none {
     display: none;
 }
+
 #logo {
-    margin: 25vh 40vw;
     animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+#logo > img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @keyframes myAnim {
@@ -25,4 +30,20 @@ body {
 	100% {
 		transform: scale(1);
 	}
+}
+
+.logo_center {    
+    margin: 25vh 40vw;
+}
+
+.logo_topLeft {
+    margin: 5vh;
+}
+
+#btnPlay {
+    background-color: transparent;
+    width: 20vw;
+    height: 10vh;
+    margin: 10vh 40vw;
+    cursor: pointer;
 }
