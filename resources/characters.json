@@ -1,0 +1,16 @@
+{
+    "characters": [
+        {
+            "id": 1,
+            "name": "Joana",
+            "image": "images/characters/anna.png",
+            "gender": "male|female",
+            "hairType": "bald|curly|straight",
+            "hasBeard": true,
+            "usesGlasses": true,
+            "usesSunglasses": true,
+            "usesHeadAccessorie": true,
+            "usesEarRings": true
+        }
+    ]
+}
