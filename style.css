@@ -48,20 +48,12 @@ body {
     cursor: pointer;
 }
 
-.background_container {
-    display: block;
-    width: 50vw;
-    height: 80vh;
-    background-color: purple;
-    margin: 10vw 10vh;
-}
-
 .container {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-column-gap: 1vw;
-    grid-row-gap: 1vh;
-    justify-items: center;
-    align-items: center;
+    display: flex;
+    grid-template-columns: 15% 15% 15% 15% 15%;
+    flex-wrap: wrap;
+    max-width: 46.5vw;
+    background-color: mediumpurple;
+    padding: 20px;
+    margin-left: 20px;
 }
