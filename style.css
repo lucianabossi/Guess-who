@@ -47,3 +47,13 @@ body {
     margin: 10vh 40vw;
     cursor: pointer;
 }
+
+.container {
+    display: flex;
+    grid-template-columns: 15% 15% 15% 15% 15%;
+    flex-wrap: wrap;
+    max-width: 46.5vw;
+    background-color: mediumpurple;
+    padding: 20px;
+    margin-left: 20px;
+}
