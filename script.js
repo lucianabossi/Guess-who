@@ -2,6 +2,8 @@
 const logo = document.getElementById('logo');
 const buttonPlay = document.getElementById('btnPlay');
 const buttonRules = document.getElementById('btnRules');
+const rules = document.getElementById('rules');
+const buttonCloseRules = document.getElementById('btnCloseRules');
 const characters = document.getElementById('characters');
 const hints = document.getElementById('hints');
 const accessories = document.getElementById('accessories');
@@ -33,6 +35,24 @@ function logoUp() {
     buttonPlay.classList.add('display_flex');
     buttonRules.classList.add('display_flex');
 }
+
+buttonRules.addEventListener('click', (event) => {
+    buttonPlay.classList.remove('display_flex');
+    buttonRules.classList.remove('display_flex');
+    buttonPlay.classList.add('display_none');
+    buttonRules.classList.add('display_none');
+    rules.classList.remove('display_none');
+    rules.classList.add('display_block');
+})
+
+buttonCloseRules.addEventListener('click', (event) => {
+    rules.classList.remove('display_block');
+    rules.classList.add('display_none');
+    buttonPlay.classList.remove('display_none');
+    buttonRules.classList.remove('display_none');
+    buttonPlay.classList.add('display_flex');
+    buttonRules.classList.add('display_flex');
+})
 
 buttonPlay.addEventListener('click', (event) => {
     buttonPlay.classList.remove('display_flex');
