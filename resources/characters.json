@@ -87,7 +87,7 @@
         {
             "id": 8,
             "name": "Helen",
-            "image": "images/characters/helen.png",
+            "image": "images/characters/Captura de tela 2023-02-08 221502.png",
             "gender": "female",
             "hairType": "curly",
             "hasBeard": false,
@@ -111,7 +111,7 @@
         {
             "id": 10,
             "name": "Jessica",
-            "image": "images/characters/jessica.png",
+            "image": "images/characters/jessica.jpg",
             "gender": "female",
             "hairType": "curly",
             "hasBeard": false,
