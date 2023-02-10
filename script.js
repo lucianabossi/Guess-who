@@ -1,6 +1,7 @@
 //Getting elements from html
 const logo = document.getElementById('logo');
 const buttonPlay = document.getElementById('btnPlay');
+const buttonRules = document.getElementById('btnRules');
 const characters = document.getElementById('characters');
 const hints = document.getElementById('hints');
 const accessories = document.getElementById('accessories');
@@ -28,11 +29,16 @@ function logoUp() {
     logo.style.width = "200px";
     logo.style.height = "216px";
     buttonPlay.classList.remove('display_none');
-    buttonPlay.classList.add('display_block');
+    buttonRules.classList.remove('display_none');
+    buttonPlay.classList.add('display_flex');
+    buttonRules.classList.add('display_flex');
 }
 
 buttonPlay.addEventListener('click', (event) => {
+    buttonPlay.classList.remove('display_flex');
+    buttonRules.classList.remove('display_flex');
     buttonPlay.classList.add('display_none');
+    buttonRules.classList.add('display_none');
     logo.classList.add('display_none');
     characters.classList.remove('display_none');
     characters.classList.add('container');
