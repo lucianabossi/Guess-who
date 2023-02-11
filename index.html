@@ -12,16 +12,33 @@
         <img src="images/who.png" alt="">
     </div>
     <div id="btnPlay" class="display_none">
-        <img src="images/background-remover-button/Green-play-button-icon-on-transparent-background-PNG(1).png" alt="">
+        <!--<img src="images/background-remover-button/Green-play-button-icon-on-transparent-background-PNG(1).png" alt="">--><p>PLAY</p>  
     </div>
-        <div class="container">
+    <div id="btnRules" class="display_none">
+        <p>RULES</p>
+    </div>
+    <div id="rules" class="display_none">
+        <div id="btnCloseRules"><p>X</p></div>
+        <p>Welcome, welcome!!</p>
+        <h4>GOAL</h4>
+        <p>Guess who is the computer’s character</p>
+        <h4>RULES</h4>
+        <ul>
+            <li>You can use up to 3 clues from the available categories.</li>
+            <li>There are 4 main categories and you cannot repeat them (choose wisely).</li>
+            <li>After receiving a hint, the characters that don't fit will be discarded and your pictures will be in black and white.</li>
+            <li>After using your 3 clues, or if you still have 3 or fewer characters, you have to predict who the computer character is.</li>
+        </ul>
+    </div>
+    <div class="aside">
+        <div class="display_none" id="characters">
             <div><img src="./images/characters/adam.png" alt=""></div>
             <div><img src="./images/characters/karen.png" alt=""></div>
             <div><img src="./images/characters/eric.png" alt=""></div>
             <div><img src="./images/characters/anna.png" alt=""></div>
             <div><img src="./images/characters/carol.png" alt=""></div>
             <div><img src="./images/characters/Captura de tela 2023-02-08 221502.png" alt=""></div>
-            <div><img src="./images/characters/jessica.png" alt=""></div>
+            <div><img src="./images/characters/jessica.jpg" alt=""></div>
             <div><img src="./images/characters/dorothy.png" alt=""></div>
             <div><img src="./images/characters/emily.png" alt=""></div>
             <div><img src="./images/characters/paul.png" alt=""></div>
@@ -36,6 +53,34 @@
             <div><img src="./images/characters/jennifer.png" alt=""></div>
             <div><img src="./images/characters/sarah.png" alt=""></div>
         </div>
-    <script src="script.js"></script>
+        <div class="display_none" id="hints">
+            <!--Main categories-->
+            <div class="category" id="accessories">ACCESSORIES</div>
+            <div class="category" id="face">FACE</div>
+            <div class="category" id="gender">GENDER</div>
+            <div class="category" id="hair">HAIR</div>
+            <!--Accessories subcategories-->            
+            <div class="display_none" id="headAccessory">HEAD ACCESSORY</div>
+            <div class="display_none" id="earrings">EARRINGS</div>
+            <!--Face subcategories-->
+            <div class="display_none" id="beard">HAS BEARD</div>
+            <div class="display_none" id="glasses">GLASSES</div>
+            <div class="display_none" id="sunglasses">SUNGLASSES</div>
+            <!--Gender subcategories-->
+            <div class="display_none" id="male">MALE</div>
+            <div class="display_none" id="female">FEMALE</div>
+            <!--Hair subcategories-->
+            <div class="display_none" id="bald">BALD</div>
+            <div class="display_none" id="curly">CURLY HAIR</div>
+            <div class="display_none" id="wavy">WAVY HAIR</div>
+            <div class="display_none" id="straight">STRAIGHT HAIR</div>
+            <!--Progress bar-->
+            <div id="questionNumber">            
+                <div class="question-bar" style="width: 10%;"><p id="questionCounter">1/10</p></div>
+            </div>
+        </div>
+        <div id="overlay" class="display_none"></div>
+    </div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
