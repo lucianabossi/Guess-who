@@ -36,6 +36,7 @@ const drawCard = () => {
 }
 
 drawCard();
+console.log(computerCharacter);
 
 //Logo animation
 const logoAnimation = setTimeout(logoUp, 2000);
@@ -131,6 +132,45 @@ face.addEventListener('click', (event) => {
     sunglasses.classList.add('category');
 })
 
+beard.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.hasBeard === true) {
+            beard.classList.remove('background-color-gray');
+            beard.classList.add('background-color-green');
+        } else {
+            beard.classList.remove('background-color-gray');
+            beard.classList.add('background-color-red');
+        }
+    }
+})
+
+glasses.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.usesGlasses === true) {
+            glasses.classList.remove('background-color-gray');
+            glasses.classList.add('background-color-green');
+        } else {
+            glasses.classList.remove('background-color-gray');
+            glasses.classList.add('background-color-red');
+        }
+    }
+})
+
+sunglasses.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.usesSunglasses === true) {
+            sunglasses.classList.remove('background-color-gray');
+            sunglasses.classList.add('background-color-green');
+        } else {
+            sunglasses.classList.remove('background-color-gray');
+            sunglasses.classList.add('background-color-red');
+        }
+    }
+})
+
 gender.addEventListener('click', (event) => {
     accessories.classList.add('display_none');
     face.classList.add('display_none');
@@ -140,6 +180,32 @@ gender.addEventListener('click', (event) => {
     male.classList.add('category');
     female.classList.remove('display_none');
     female.classList.add('category');
+})
+
+male.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.gender === 'male') {
+            male.classList.remove('background-color-gray');
+            male.classList.add('background-color-green');
+        } else {
+            male.classList.remove('background-color-gray');
+            male.classList.add('background-color-red');
+        }
+    }
+})
+
+female.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.gender === 'female') {
+            female.classList.remove('background-color-gray');
+            female.classList.add('background-color-green');
+        } else {
+            female.classList.remove('background-color-gray');
+            female.classList.add('background-color-red');
+        }
+    }
 })
 
 hair.addEventListener('click', (event) => {
@@ -157,7 +223,57 @@ hair.addEventListener('click', (event) => {
     straight.classList.add('category');
 })
 
+bald.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.hairType === 'bald') {
+            bald.classList.remove('background-color-gray');
+            bald.classList.add('background-color-green');
+        } else {
+            bald.classList.remove('background-color-gray');
+            bald.classList.add('background-color-red');
+        }
+    }
+})
 
+curly.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.hairType === 'curly') {
+            curly.classList.remove('background-color-gray');
+            curly.classList.add('background-color-green');
+        } else {
+            curly.classList.remove('background-color-gray');
+            curly.classList.add('background-color-red');
+        }
+    }
+})
+
+wavy.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.hairType === 'wavy') {
+            wavy.classList.remove('background-color-gray');
+            wavy.classList.add('background-color-green');
+        } else {
+            wavy.classList.remove('background-color-gray');
+            wavy.classList.add('background-color-red');
+        }
+    }
+})
+
+straight.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.hairType === 'straight') {
+            straight.classList.remove('background-color-gray');
+            straight.classList.add('background-color-green');
+        } else {
+            straight.classList.remove('background-color-gray');
+            straight.classList.add('background-color-red');
+        }
+    }
+})
 
 //Applying overlay
 function overlay() {
