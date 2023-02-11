@@ -1,6 +1,7 @@
 //Getting chracters from json file
 import data from './resources/characters.json' assert {type: 'json'};
 console.log(data);
+
 //Getting elements from html
 const logo = document.getElementById('logo');
 const buttonPlay = document.getElementById('btnPlay');
@@ -25,8 +26,16 @@ const curly = document.getElementById('curly');
 const wavy = document.getElementById('wavy');
 const straight = document.getElementById('straight');
 
+var computerCharacter;
+var charactersCards = data.characters;
 
+//draw computer character
+const drawCard = () => {
+    var cardNumber = parseInt(Math.random() *3);
+    computerCharacter = charactersCards[cardNumber];
+}
 
+drawCard();
 
 //Logo animation
 const logoAnimation = setTimeout(logoUp, 2000);
@@ -72,6 +81,7 @@ buttonPlay.addEventListener('click', (event) => {
 })
 
 accessories.addEventListener('click', (event) => {
+    //enable-disable visibility (css display)
     accessories.classList.add('display_none');
     face.classList.add('display_none');
     gender.classList.add('display_none');
@@ -79,7 +89,33 @@ accessories.addEventListener('click', (event) => {
     headAccessory.classList.remove('display_none');
     headAccessory.classList.add('category');
     earrings.classList.remove('display_none');
-    earrings.classList.add('category');
+    earrings.classList.add('category');    
+})
+
+headAccessory.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.usesHairAccessorie === true) {
+            headAccessory.classList.remove('background-color-gray');
+            headAccessory.classList.add('background-color-green');
+        } else {
+            headAccessory.classList.remove('background-color-gray');
+            headAccessory.classList.add('background-color-red');
+        }
+    }
+})
+
+earrings.addEventListener('click', (event) => {
+    //logic
+    for(let i = 0; i<data.characters.length; i++) {
+        if(computerCharacter.usesEarRings === true) {
+            earrings.classList.remove('background-color-gray');
+            earrings.classList.add('background-color-green');
+        } else {
+            earrings.classList.remove('background-color-gray');
+            earrings.classList.add('background-color-red');
+        }
+    }
 })
 
 face.addEventListener('click', (event) => {
@@ -120,6 +156,8 @@ hair.addEventListener('click', (event) => {
     straight.classList.remove('display_none');
     straight.classList.add('category');
 })
+
+
 
 //Applying overlay
 function overlay() {

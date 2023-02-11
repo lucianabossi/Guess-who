@@ -17,6 +17,18 @@ body {
     display: flex;
 }
 
+.background-color-green {
+    background-color: mediumseagreen;
+}
+
+.background-color-red {
+    background-color: tomato;
+}
+
+.background-color-gray {
+    background-color: #D9D9D973;
+}
+
 #logo {
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
@@ -140,8 +152,7 @@ h4 {
 
 .category {
     width: 15vw;
-    height: 5vh;
-    background-color: #D9D9D973;
+    height: 5vh;    
     text-align: center;
     margin: 28px auto;
     line-height: 2.5;
