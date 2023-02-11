@@ -51,6 +51,7 @@ function logoUp() {
     buttonRules.classList.add('display_flex');
 }
 
+//Display rules
 buttonRules.addEventListener('click', (event) => {
     buttonPlay.classList.remove('display_flex');
     buttonRules.classList.remove('display_flex');
@@ -69,6 +70,7 @@ buttonCloseRules.addEventListener('click', (event) => {
     buttonRules.classList.add('display_flex');
 })
 
+//Start game
 buttonPlay.addEventListener('click', (event) => {
     buttonPlay.classList.remove('display_flex');
     buttonRules.classList.remove('display_flex');
@@ -81,6 +83,7 @@ buttonPlay.addEventListener('click', (event) => {
     hints.classList.add('hints');
 })
 
+//Accessories category
 accessories.addEventListener('click', (event) => {
     //enable-disable visibility (css display)
     accessories.classList.add('display_none');
@@ -127,6 +130,7 @@ earrings.addEventListener('click', (event) => {
     }
 })
 
+//Face categories
 face.addEventListener('click', (event) => {
     accessories.classList.add('display_none');
     face.classList.add('display_none');
@@ -197,6 +201,8 @@ sunglasses.addEventListener('click', (event) => {
     }
 })
 
+
+//Gender categories
 gender.addEventListener('click', (event) => {
     accessories.classList.add('display_none');
     face.classList.add('display_none');
@@ -243,6 +249,7 @@ female.addEventListener('click', (event) => {
     }
 })
 
+//Hair categories
 hair.addEventListener('click', (event) => {
     accessories.classList.add('display_none');
     face.classList.add('display_none');
