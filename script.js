@@ -1,3 +1,6 @@
+//Getting chracters from json file
+import data from './resources/characters.json' assert {type: 'json'};
+console.log(data);
 //Getting elements from html
 const logo = document.getElementById('logo');
 const buttonPlay = document.getElementById('btnPlay');
@@ -21,6 +24,8 @@ const bald = document.getElementById('bald');
 const curly = document.getElementById('curly');
 const wavy = document.getElementById('wavy');
 const straight = document.getElementById('straight');
+
+
 
 
 //Logo animation
