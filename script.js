@@ -94,6 +94,10 @@ accessories.addEventListener('click', (event) => {
 })
 
 headAccessory.addEventListener('click', (event) => {
+    earrings.classList.remove('clickable');
+    earrings.classList.add('non-clickable');
+    headAccessory.classList.remove('clickable');
+    headAccessory.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.usesHairAccessorie === true) {
@@ -107,6 +111,10 @@ headAccessory.addEventListener('click', (event) => {
 })
 
 earrings.addEventListener('click', (event) => {
+    headAccessory.classList.remove('clickable');
+    headAccessory.classList.add('non-clickable');
+    earrings.classList.remove('clickable');
+    earrings.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.usesEarRings === true) {
@@ -133,6 +141,12 @@ face.addEventListener('click', (event) => {
 })
 
 beard.addEventListener('click', (event) => {
+    glasses.classList.remove('clickable');
+    sunglasses.classList.remove('clickable');
+    beard.classList.remove('clickable');
+    glasses.classList.add('non-clickable');
+    sunglasses.classList.add('non-clickable');
+    beard.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.hasBeard === true) {
@@ -146,6 +160,12 @@ beard.addEventListener('click', (event) => {
 })
 
 glasses.addEventListener('click', (event) => {
+    beard.classList.remove('clickable');
+    sunglasses.classList.remove('clickable');
+    glasses.classList.remove('clickable');
+    beard.classList.add('non-clickable');
+    sunglasses.classList.add('non-clickable');
+    glasses.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.usesGlasses === true) {
@@ -159,6 +179,12 @@ glasses.addEventListener('click', (event) => {
 })
 
 sunglasses.addEventListener('click', (event) => {
+    beard.classList.remove('clickable');
+    glasses.classList.remove('clickable');
+    sunglasses.classList.remove('clickable');
+    beard.classList.add('non-clickable');
+    glasses.classList.add('non-clickable');
+    sunglasses.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.usesSunglasses === true) {
@@ -183,6 +209,10 @@ gender.addEventListener('click', (event) => {
 })
 
 male.addEventListener('click', (event) => {
+    female.classList.remove('clickable');
+    female.classList.add('non-clickable');
+    male.classList.remove('clickable');
+    male.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.gender === 'male') {
@@ -193,9 +223,14 @@ male.addEventListener('click', (event) => {
             male.classList.add('background-color-red');
         }
     }
+    
 })
 
 female.addEventListener('click', (event) => {
+    male.classList.remove('clickable');
+    male.classList.add('non-clickable');
+    female.classList.remove('clickable');
+    female.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.gender === 'female') {
@@ -224,6 +259,14 @@ hair.addEventListener('click', (event) => {
 })
 
 bald.addEventListener('click', (event) => {
+    curly.classList.remove('clickable');
+    wavy.classList.remove('clickable');
+    straight.classList.remove('clickable');
+    bald.classList.remove('clickable');
+    curly.classList.add('non-clickable');
+    wavy.classList.add('non-clickable');
+    straight.classList.add('non-clickable');
+    bald.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.hairType === 'bald') {
@@ -237,6 +280,14 @@ bald.addEventListener('click', (event) => {
 })
 
 curly.addEventListener('click', (event) => {
+    bald.classList.remove('clickable');
+    wavy.classList.remove('clickable');
+    straight.classList.remove('clickable');
+    curly.classList.remove('clickable');
+    bald.classList.add('non-clickable');
+    wavy.classList.add('non-clickable');
+    straight.classList.add('non-clickable');
+    curly.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.hairType === 'curly') {
@@ -250,6 +301,14 @@ curly.addEventListener('click', (event) => {
 })
 
 wavy.addEventListener('click', (event) => {
+    bald.classList.remove('clickable');
+    curly.classList.remove('clickable');
+    straight.classList.remove('clickable');
+    wavy.classList.remove('clickable');
+    bald.classList.add('non-clickable');
+    curly.classList.add('non-clickable');
+    straight.classList.add('non-clickable');
+    wavy.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.hairType === 'wavy') {
@@ -263,6 +322,14 @@ wavy.addEventListener('click', (event) => {
 })
 
 straight.addEventListener('click', (event) => {
+    bald.classList.remove('clickable');
+    curly.classList.remove('clickable');
+    wavy.classList.remove('clickable');
+    straight.classList.remove('clickable');
+    bald.classList.add('non-clickable');
+    curly.classList.add('non-clickable');
+    wavy.classList.add('non-clickable');
+    straight.classList.add('non-clickable');
     //logic
     for(let i = 0; i<data.characters.length; i++) {
         if(computerCharacter.hairType === 'straight') {
