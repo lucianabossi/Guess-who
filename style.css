@@ -36,6 +36,10 @@ body {
     pointer-events: none;
 }
 
+.text-line-through {
+    text-decoration: line-through;
+}
+
 #logo {
     animation: myAnim 2s ease 0s 1 normal forwards;
 }

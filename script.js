@@ -51,6 +51,68 @@ function logoUp() {
     buttonRules.classList.add('display_flex');
 }
 
+//Display main categories
+function mainCategories() {
+    accessories.classList.remove('display_none');
+    face.classList.remove('display_none');
+    gender.classList.remove('display_none');
+    hair.classList.remove('display_none');
+    accessories.classList.add('category');
+    face.classList.add('category');
+    gender.classList.add('category');
+    hair.classList.add('category');
+}
+
+//Hide accessories subCategories
+function hideAccessories() {
+    headAccessory.classList.remove('category');
+    earrings.classList.remove('category');
+    headAccessory.classList.add('display_none');
+    earrings.classList.add('display_none');
+    accessories.classList.remove('clickable');
+    accessories.classList.add('non-clickable');
+    accessories.classList.add('text-line-through')
+}
+
+//Hide face subCategories
+function hideFace() {
+    beard.classList.remove('category');
+    glasses.classList.remove('category');
+    sunglasses.classList.remove('category');
+    beard.classList.add('display_none');
+    glasses.classList.add('display_none');
+    sunglasses.classList.add('display_none');
+    face.classList.remove('clickable');
+    face.classList.add('non-clickable');
+    face.classList.add('text-line-through')
+}
+
+//Hide gender subCategories
+function hideGender() {
+    male.classList.remove('category');
+    female.classList.remove('category');
+    male.classList.add('display_none');
+    female.classList.add('display_none');
+    gender.classList.remove('clickable');
+    gender.classList.add('non-clickable');
+    gender.classList.add('text-line-through')
+}
+
+//Hide hair subCategories
+function hideHair() {
+    bald.classList.remove('category');
+    curly.classList.remove('category');
+    wavy.classList.remove('category');
+    straight.classList.remove('category');
+    bald.classList.add('display_none');
+    curly.classList.add('display_none');
+    wavy.classList.add('display_none');
+    straight.classList.add('display_none');
+    hair.classList.remove('clickable');
+    hair.classList.add('non-clickable');
+    hair.classList.add('text-line-through')
+}
+
 //Display rules
 buttonRules.addEventListener('click', (event) => {
     buttonPlay.classList.remove('display_flex');
@@ -111,6 +173,8 @@ headAccessory.addEventListener('click', (event) => {
             headAccessory.classList.add('background-color-red');
         }
     }
+    const allAccessories = setTimeout(hideAccessories, 1000)  
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 earrings.addEventListener('click', (event) => {
@@ -128,6 +192,8 @@ earrings.addEventListener('click', (event) => {
             earrings.classList.add('background-color-red');
         }
     }
+    const allAccessories = setTimeout(hideAccessories, 1000)  
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 //Face categories
@@ -161,6 +227,8 @@ beard.addEventListener('click', (event) => {
             beard.classList.add('background-color-red');
         }
     }
+    const allFace = setTimeout(hideFace, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 glasses.addEventListener('click', (event) => {
@@ -180,6 +248,8 @@ glasses.addEventListener('click', (event) => {
             glasses.classList.add('background-color-red');
         }
     }
+    const allFace = setTimeout(hideFace, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 sunglasses.addEventListener('click', (event) => {
@@ -199,6 +269,8 @@ sunglasses.addEventListener('click', (event) => {
             sunglasses.classList.add('background-color-red');
         }
     }
+    const allFace = setTimeout(hideFace, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 
@@ -229,6 +301,8 @@ male.addEventListener('click', (event) => {
             male.classList.add('background-color-red');
         }
     }
+    const allGender = setTimeout(hideGender, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
     
 })
 
@@ -247,6 +321,8 @@ female.addEventListener('click', (event) => {
             female.classList.add('background-color-red');
         }
     }
+    const allGender = setTimeout(hideGender, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 //Hair categories
@@ -284,6 +360,8 @@ bald.addEventListener('click', (event) => {
             bald.classList.add('background-color-red');
         }
     }
+    const allHair = setTimeout(hideHair, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 curly.addEventListener('click', (event) => {
@@ -305,6 +383,8 @@ curly.addEventListener('click', (event) => {
             curly.classList.add('background-color-red');
         }
     }
+    const allHair = setTimeout(hideHair, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 wavy.addEventListener('click', (event) => {
@@ -326,6 +406,8 @@ wavy.addEventListener('click', (event) => {
             wavy.classList.add('background-color-red');
         }
     }
+    const allHair = setTimeout(hideHair, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 straight.addEventListener('click', (event) => {
@@ -347,6 +429,8 @@ straight.addEventListener('click', (event) => {
             straight.classList.add('background-color-red');
         }
     }
+    const allHair = setTimeout(hideHair, 1000);
+    const displayMainCategories = setTimeout(mainCategories, 1000);
 })
 
 //Applying overlay
