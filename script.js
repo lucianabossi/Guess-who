@@ -1,6 +1,5 @@
 //Getting chracters from json file
 import data from './resources/characters.json' assert {type: 'json'};
-console.log(data);
 
 //Getting elements from html
 const logo = document.getElementById('logo');
@@ -26,17 +25,28 @@ const curly = document.getElementById('curly');
 const wavy = document.getElementById('wavy');
 const straight = document.getElementById('straight');
 
+//getting images from JSON file
+for(let i = 0; i<data.characters.length; i++) {
+    const img = document.createElement('img');
+    img.src = data.characters[i].image;
+    img.id = data.characters[i].id;
+    characters.appendChild(img);
+    console.log(img);
+}
+
 var computerCharacter;
 var charactersCards = data.characters;
 
 //draw computer character
 const drawCard = () => {
-    var cardNumber = parseInt(Math.random() *3);
+    var cardNumber = parseInt(Math.random() *20);
+    console.log(cardNumber);
     computerCharacter = charactersCards[cardNumber];
 }
 
 drawCard();
 console.log(computerCharacter);
+
 
 //Logo animation
 const logoAnimation = setTimeout(logoUp, 2000);
@@ -158,16 +168,18 @@ accessories.addEventListener('click', (event) => {
     earrings.classList.add('category');    
 })
 
+//Changing hints background-color - accessories
 headAccessory.addEventListener('click', (event) => {
     earrings.classList.remove('clickable');
     earrings.classList.add('non-clickable');
     headAccessory.classList.remove('clickable');
     headAccessory.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.usesHairAccessorie === true) {
             headAccessory.classList.remove('background-color-gray');
             headAccessory.classList.add('background-color-green');
+
         } else {
             headAccessory.classList.remove('background-color-gray');
             headAccessory.classList.add('background-color-red');
@@ -175,6 +187,15 @@ headAccessory.addEventListener('click', (event) => {
     }
     const allAccessories = setTimeout(hideAccessories, 1000)  
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.usesHairAccessorie === true) && (charactersCards[i].usesHairAccessorie === false)) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.usesHairAccessorie === false) && (charactersCards[i].usesHairAccessorie === true)) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 earrings.addEventListener('click', (event) => {
@@ -183,7 +204,7 @@ earrings.addEventListener('click', (event) => {
     earrings.classList.remove('clickable');
     earrings.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.usesEarRings === true) {
             earrings.classList.remove('background-color-gray');
             earrings.classList.add('background-color-green');
@@ -194,7 +215,18 @@ earrings.addEventListener('click', (event) => {
     }
     const allAccessories = setTimeout(hideAccessories, 1000)  
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.usesEarRings === true) && (charactersCards[i].usesEarRings === false)) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.usesEarRings === false) && (charactersCards[i].usesEarRings === true)) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
+
+
 
 //Face categories
 face.addEventListener('click', (event) => {
@@ -218,7 +250,7 @@ beard.addEventListener('click', (event) => {
     sunglasses.classList.add('non-clickable');
     beard.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.hasBeard === true) {
             beard.classList.remove('background-color-gray');
             beard.classList.add('background-color-green');
@@ -229,6 +261,15 @@ beard.addEventListener('click', (event) => {
     }
     const allFace = setTimeout(hideFace, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.hasBeard === true) && (charactersCards[i].hasBeard === false)) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.hasBeard === false) && (charactersCards[i].hasBeard === true)) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 glasses.addEventListener('click', (event) => {
@@ -239,7 +280,7 @@ glasses.addEventListener('click', (event) => {
     sunglasses.classList.add('non-clickable');
     glasses.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.usesGlasses === true) {
             glasses.classList.remove('background-color-gray');
             glasses.classList.add('background-color-green');
@@ -250,6 +291,15 @@ glasses.addEventListener('click', (event) => {
     }
     const allFace = setTimeout(hideFace, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.usesGlasses === true) && (charactersCards[i].usesGlasses === false)) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.usesGlasses === false) && (charactersCards[i].usesGlasses === true)) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 sunglasses.addEventListener('click', (event) => {
@@ -260,7 +310,7 @@ sunglasses.addEventListener('click', (event) => {
     glasses.classList.add('non-clickable');
     sunglasses.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.usesSunglasses === true) {
             sunglasses.classList.remove('background-color-gray');
             sunglasses.classList.add('background-color-green');
@@ -271,6 +321,15 @@ sunglasses.addEventListener('click', (event) => {
     }
     const allFace = setTimeout(hideFace, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.usesSunglasses === true) && (charactersCards[i].usesSunglasses === false)) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.usesSunglasses === false) && (charactersCards[i].usesSunglasses === true)) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 
@@ -292,7 +351,7 @@ male.addEventListener('click', (event) => {
     male.classList.remove('clickable');
     male.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.gender === 'male') {
             male.classList.remove('background-color-gray');
             male.classList.add('background-color-green');
@@ -303,7 +362,15 @@ male.addEventListener('click', (event) => {
     }
     const allGender = setTimeout(hideGender, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
-    
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.gender === 'male') && (charactersCards[i].gender === 'female')) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.gender === 'female') && (charactersCards[i].gender === 'male')) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 female.addEventListener('click', (event) => {
@@ -312,7 +379,7 @@ female.addEventListener('click', (event) => {
     female.classList.remove('clickable');
     female.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.gender === 'female') {
             female.classList.remove('background-color-gray');
             female.classList.add('background-color-green');
@@ -323,6 +390,15 @@ female.addEventListener('click', (event) => {
     }
     const allGender = setTimeout(hideGender, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.gender === 'female') && (charactersCards[i].gender === 'male')) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.gender === 'male') && (charactersCards[i].gender === 'female')) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 //Hair categories
@@ -351,7 +427,7 @@ bald.addEventListener('click', (event) => {
     straight.classList.add('non-clickable');
     bald.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.hairType === 'bald') {
             bald.classList.remove('background-color-gray');
             bald.classList.add('background-color-green');
@@ -362,6 +438,15 @@ bald.addEventListener('click', (event) => {
     }
     const allHair = setTimeout(hideHair, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.hairType === 'bald') && (charactersCards[i].hairType !== 'bald')) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.hairType !== 'bald') && (charactersCards[i].hairType === 'bald')) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 curly.addEventListener('click', (event) => {
@@ -374,7 +459,7 @@ curly.addEventListener('click', (event) => {
     straight.classList.add('non-clickable');
     curly.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.hairType === 'curly') {
             curly.classList.remove('background-color-gray');
             curly.classList.add('background-color-green');
@@ -385,6 +470,15 @@ curly.addEventListener('click', (event) => {
     }
     const allHair = setTimeout(hideHair, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.hairType === 'curly') && (charactersCards[i].hairType !== 'curly')) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.hairType !== 'curly') && (charactersCards[i].hairType === 'curly')) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 wavy.addEventListener('click', (event) => {
@@ -397,7 +491,7 @@ wavy.addEventListener('click', (event) => {
     straight.classList.add('non-clickable');
     wavy.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.hairType === 'wavy') {
             wavy.classList.remove('background-color-gray');
             wavy.classList.add('background-color-green');
@@ -408,6 +502,15 @@ wavy.addEventListener('click', (event) => {
     }
     const allHair = setTimeout(hideHair, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.hairType === 'wavy') && (charactersCards[i].hairType !== 'wavy')) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.hairType !== 'wavy') && (charactersCards[i].hairType === 'wavy')) {
+        actualCharacter.classList.add('overlay');
+    }    
+}
 })
 
 straight.addEventListener('click', (event) => {
@@ -420,7 +523,7 @@ straight.addEventListener('click', (event) => {
     wavy.classList.add('non-clickable');
     straight.classList.add('non-clickable');
     //logic
-    for(let i = 0; i<data.characters.length; i++) {
+    for(let i = 0; i<charactersCards.length; i++) {
         if(computerCharacter.hairType === 'straight') {
             straight.classList.remove('background-color-gray');
             straight.classList.add('background-color-green');
@@ -431,9 +534,13 @@ straight.addEventListener('click', (event) => {
     }
     const allHair = setTimeout(hideHair, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
-})
-
-//Applying overlay
-function overlay() {
-    
+    //comparing computer's card with all characters
+    for(let i = 0; i<charactersCards.length; i++){
+        const actualCharacter = document.getElementById(charactersCards[i].id);
+        if((computerCharacter.hairType === 'straight') && (charactersCards[i].hairType !== 'straight')) {
+            actualCharacter.classList.add('overlay');
+        } else if ((computerCharacter.hairType !== 'straight') && (charactersCards[i].hairType === 'straight')) {
+        actualCharacter.classList.add('overlay');
+    }    
 }
+})

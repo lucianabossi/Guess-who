@@ -233,7 +233,7 @@
             "name": "Sharon",
             "image": "images/characters/sharon.png",
             "gender": "female",
-            "hairType": "straight",
+            "hairType": "curly",
             "hasBeard": false,
             "usesGlasses": false,
             "usesSunglasses": true,
