@@ -25,13 +25,18 @@ const curly = document.getElementById('curly');
 const wavy = document.getElementById('wavy');
 const straight = document.getElementById('straight');
 
-//getting images from JSON file
+//getting data from JSON file
 for(let i = 0; i<data.characters.length; i++) {
+    const div = document.createElement('div');
     const img = document.createElement('img');
+    const name = document.createElement('p');
     img.src = data.characters[i].image;
     img.id = data.characters[i].id;
-    characters.appendChild(img);
-    console.log(img);
+    name.innerText = data.characters[i].name;
+    name.classList.add('text-overlay');
+    characters.appendChild(div);
+    div.appendChild(img);
+    div.appendChild(name);
 }
 
 var computerCharacter;

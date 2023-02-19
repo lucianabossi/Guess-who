@@ -203,3 +203,19 @@ h4 {
 .overlay {
     filter: grayscale(100%);
 }
+
+#characters {
+    position: relative;
+}
+p{
+    margin: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #000;
+    margin: -21vh auto;
+  }
