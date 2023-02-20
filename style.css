@@ -67,14 +67,6 @@ body {
     margin: 5vh;
 }
 
-/*#btnPlay {
-    background-color: transparent;
-    width: 20vw;
-    height: 10vh;
-    margin: 10vh 40vw;
-    cursor: pointer;
-}*/
-
 #btnPlay, #btnRules {    
     align-items: center;
     justify-content: center;
@@ -163,10 +155,10 @@ h4 {
 
 .category {
     width: 15vw;
-    height: 5vh;    
+    height: 4vh;    
     text-align: center;
-    margin: 28px auto;
-    line-height: 2.5;
+    margin: 10px auto;
+    line-height: 2;
     font-family: sans-serif;
     font-size: 1.2rem;
 }
@@ -218,4 +210,17 @@ p{
     font-size: 1.2rem;
     color: #000;
     margin: -21vh auto;
-  }
+}
+
+#btnBack {
+    padding: 5px 15px;
+}
+
+.button_back_default {
+    font-size: 3em; 
+    color: transparent;
+}
+
+.button_back_visible {
+    color: #6E5AE6;
+}
