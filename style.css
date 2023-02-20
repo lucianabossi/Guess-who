@@ -40,6 +40,10 @@ body {
     text-decoration: line-through;
 }
 
+.icon-size {
+    font-size: 2em;
+}
+
 #logo {
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
