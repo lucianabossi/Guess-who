@@ -86,6 +86,37 @@ function mainCategories() {
     buttonBack.classList.add('button_back_default');
 }
 
+//Hide subCategories
+function hideCategories() {
+    headAccessory.classList.remove('category');
+    earrings.classList.remove('category');
+    headAccessory.classList.add('display_none');
+    earrings.classList.add('display_none');
+    beard.classList.remove('category');
+    glasses.classList.remove('category');
+    sunglasses.classList.remove('category');
+    beard.classList.add('display_none');
+    glasses.classList.add('display_none');
+    sunglasses.classList.add('display_none');
+    male.classList.remove('category');
+    female.classList.remove('category');
+    male.classList.add('display_none');
+    female.classList.add('display_none');
+    bald.classList.remove('category');
+    curly.classList.remove('category');
+    wavy.classList.remove('category');
+    straight.classList.remove('category');
+    bald.classList.add('display_none');
+    curly.classList.add('display_none');
+    wavy.classList.add('display_none');
+    straight.classList.add('display_none');
+    pinned.classList.remove('category');
+    loose.classList.remove('category');
+    pinned.classList.add('display_none');
+    loose.classList.add('display_none');
+    mainCategories();
+}
+
 //Hide accessories subCategories
 function hideAccessories() {
     headAccessory.classList.remove('category');
@@ -484,7 +515,7 @@ bald.addEventListener('click', (event) => {
             bald.classList.add('background-color-red');
         }
     }
-    const allHair = setTimeout(hideHairType, 1000);
+    const allHairType = setTimeout(hideHairType, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
     //comparing computer's card with all characters
     for(let i = 0; i<charactersCards.length; i++){
@@ -516,7 +547,7 @@ curly.addEventListener('click', (event) => {
             curly.classList.add('background-color-red');
         }
     }
-    const allHair = setTimeout(hideHairType, 1000);
+    const allHairType = setTimeout(hideHairType, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
     //comparing computer's card with all characters
     for(let i = 0; i<charactersCards.length; i++){
@@ -548,7 +579,7 @@ wavy.addEventListener('click', (event) => {
             wavy.classList.add('background-color-red');
         }
     }
-    const allHair = setTimeout(hideHairType, 1000);
+    const allHairType = setTimeout(hideHairType, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
     //comparing computer's card with all characters
     for(let i = 0; i<charactersCards.length; i++){
@@ -580,7 +611,7 @@ straight.addEventListener('click', (event) => {
             straight.classList.add('background-color-red');
         }
     }
-    const allHair = setTimeout(hideHairType, 1000);
+    const allHairType = setTimeout(hideHairType, 1000);
     const displayMainCategories = setTimeout(mainCategories, 1000);
     //comparing computer's card with all characters
     for(let i = 0; i<charactersCards.length; i++){
@@ -658,5 +689,5 @@ loose.addEventListener('click', (event) => {
 })
 
 buttonBack.addEventListener('click', (event) => {
-    
+    const hideAll = setTimeout(hideCategories, 500);
 })
