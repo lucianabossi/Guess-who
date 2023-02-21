@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -202,6 +204,7 @@ h4 {
 
 #characters {
     position: relative;
+    font-family: sans-serif;
 }
 p{
     margin: 0;
@@ -227,4 +230,31 @@ p{
 
 .button_back_visible {
     color: #6E5AE6;
+}
+
+.slideText {
+    animation: myAnim 10s ease 0s infinite normal forwards;
+    font-family: 'Shadows Into Light', cursive;
+    color: #f4a261;
+    font-size: 2em;
+    text-shadow: -6px -3px 4px #50F560;
+    background-color: #fff;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100px);
+	}
+}
+
+#userGuess {
+    width: 5vw;
+    height: 3vh;
+    display: block;
+    background-color: lime;
+    float: left;
 }
