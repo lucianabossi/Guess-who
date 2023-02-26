@@ -101,7 +101,7 @@
         {
             "id": 8,
             "name": "Helen",
-            "image": "images/characters/Captura de tela 2023-02-08 221502.png",
+            "image": "images/characters/helen.png",
             "gender": "female",
             "hairType": "curly",
             "hasBeard": false,
