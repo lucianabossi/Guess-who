@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -15,6 +17,33 @@ body {
 
 .display_flex {
     display: flex;
+}
+
+.background-color-green {
+    background-color: mediumseagreen;
+}
+
+.background-color-red {
+    background-color: tomato;
+}
+
+.background-color-gray {
+    background-color: #D9D9D973;
+}
+
+.clickable {
+    cursor: pointer;
+}
+.non-clickable {
+    pointer-events: none;
+}
+
+.text-line-through {
+    text-decoration: line-through;
+}
+
+.icon-size {
+    font-size: 2em;
 }
 
 #logo {
@@ -43,14 +72,6 @@ body {
 .logo_topLeft {
     margin: 5vh;
 }
-
-/*#btnPlay {
-    background-color: transparent;
-    width: 20vw;
-    height: 10vh;
-    margin: 10vh 40vw;
-    cursor: pointer;
-}*/
 
 #btnPlay, #btnRules {    
     align-items: center;
@@ -140,14 +161,12 @@ h4 {
 
 .category {
     width: 15vw;
-    height: 5vh;
-    background-color: #D9D9D973;
+    height: 4vh;    
     text-align: center;
-    margin: 28px auto;
-    line-height: 2.5;
+    margin: 10px auto;
+    line-height: 2;
     font-family: sans-serif;
     font-size: 1.2rem;
-    cursor: pointer;
 }
 
 #questionCounter {
@@ -179,8 +198,63 @@ h4 {
     margin-left: 5vw;
 }
 
-#overlay {
-    width: 170px;
-    height: 170px;
-    background-color: #24222283;
+.overlay {
+    filter: grayscale(100%);
+}
+
+#characters {
+    position: relative;
+    font-family: sans-serif;
+}
+p{
+    margin: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #000;
+    margin: -21vh auto;
+}
+
+#btnBack {
+    padding: 5px 15px;
+}
+
+.button_back_default {
+    font-size: 3em; 
+    color: transparent;
+}
+
+.button_back_visible {
+    color: #6E5AE6;
+}
+
+.slideText {
+    animation: myAnim 10s ease 0s infinite normal forwards;
+    font-family: 'Shadows Into Light', cursive;
+    color: #f4a261;
+    font-size: 2em;
+    text-shadow: -6px -3px 4px #50F560;
+    background-color: #fff;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100px);
+	}
+}
+
+#userGuess {
+    width: 5vw;
+    height: 3vh;
+    display: block;
+    background-color: lime;
+    float: left;
 }
