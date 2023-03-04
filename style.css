@@ -233,7 +233,7 @@ p{
 }
 
 .slideText {
-    animation: myAnim 10s ease 0s infinite normal forwards;
+    animation: myAnimInput 10s ease 0s infinite normal forwards;
     font-family: 'Shadows Into Light', cursive;
     color: #f4a261;
     font-size: 2em;
@@ -241,7 +241,7 @@ p{
     background-color: #fff;
 }
 
-@keyframes myAnim {
+@keyframes myAnimInput {
 	0% {
 		transform: translateX(0);
 	}
