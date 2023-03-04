@@ -28,6 +28,7 @@ const wavy = document.getElementById('wavy');
 const straight = document.getElementById('straight');
 const pinned = document.getElementById('pinned');
 const loose = document.getElementById('loose');
+const input = document.getElementById('userGuess');
 
 //getting data from JSON file
 for(let i = 0; i<data.characters.length; i++) {
@@ -691,3 +692,13 @@ loose.addEventListener('click', (event) => {
 buttonBack.addEventListener('click', (event) => {
     const hideAll = setTimeout(hideCategories, 500);
 })
+
+let cardsOverlayed = document.querySelectorAll('.overlay');
+console.log(cardsOverlayed);
+
+if(cardsOverlayed <=2) {
+    hints.classList.remove('display_block');
+    hints.classList.add('display_none');
+    input.classList.remove('display_none');
+    input.classList.add('display_block');
+}

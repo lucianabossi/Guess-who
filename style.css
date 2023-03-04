@@ -251,10 +251,14 @@ p{
 	}
 }
 
-#userGuess {
-    width: 5vw;
-    height: 3vh;
-    display: block;
+.guessingInput {
+    width: 25vw;
+    height: 15vh;
     background-color: lime;
-    float: left;
+}
+
+.guessingInput > input {
+    width: 10vw;
+    height: 5vh;
+    margin: auto;
 }
