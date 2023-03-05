@@ -221,27 +221,92 @@ buttonPlay.addEventListener('click', (event) => {
 })
 
 //adding event listener
-const characteristics = document.querySelectorAll('characteristics');
+const characteristics = document.getElementById('hints');
 
-characteristics.addEventListener('click', (event) => {
-    switch()
-})
-
-//Accessories category
-accessories.addEventListener('click', (event) => {
-    //enable-disable visibility 
-    accessories.classList.add('display_none');
-    face.classList.add('display_none');
-    gender.classList.add('display_none');
-    hairType.classList.add('display_none');
-    hair.classList.add('display_none');
-    buttonBack.classList.remove('button_back_default');
-    buttonBack.classList.add('button_back_visible');
-    buttonBack.classList.add('clickable');
-    headAccessory.classList.remove('display_none');
-    headAccessory.classList.add('category');
-    earrings.classList.remove('display_none');
-    earrings.classList.add('category');    
+characteristics.addEventListener('click', event => {
+    for(const child of characteristics.children) {
+        console.log(child.id);
+        switch(child.id) {
+            case "accessories":
+                //enable-disable visibility 
+                accessories.classList.add('display_none');
+                face.classList.add('display_none');
+                gender.classList.add('display_none');
+                hairType.classList.add('display_none');
+                hair.classList.add('display_none');
+                buttonBack.classList.remove('button_back_default');
+                buttonBack.classList.add('button_back_visible');
+                buttonBack.classList.add('clickable');
+                headAccessory.classList.remove('display_none');
+                headAccessory.classList.add('category');
+                earrings.classList.remove('display_none');
+                earrings.classList.add('category');  
+                break;
+            case "face":
+                accessories.classList.add('display_none');
+                face.classList.add('display_none');
+                gender.classList.add('display_none');
+                hairType.classList.add('display_none');
+                hair.classList.add('display_none');
+                beard.classList.remove('display_none');
+                beard.classList.add('category');
+                glasses.classList.remove('display_none');
+                glasses.classList.add('category');
+                sunglasses.classList.remove('display_none');
+                sunglasses.classList.add('category');
+                buttonBack.classList.remove('button_back_default');
+                buttonBack.classList.add('button_back_visible');
+                buttonBack.classList.add('clickable');
+                break;
+            case "gender":
+                accessories.classList.add('display_none');
+                face.classList.add('display_none');
+                gender.classList.add('display_none');
+                hairType.classList.add('display_none');
+                hair.classList.add('display_none');
+                male.classList.remove('display_none');
+                male.classList.add('category');
+                female.classList.remove('display_none');
+                female.classList.add('category');
+                buttonBack.classList.remove('button_back_default');
+                buttonBack.classList.add('button_back_visible');
+                buttonBack.classList.add('clickable');
+                break;
+            case "hairType":
+                accessories.classList.add('display_none');
+                face.classList.add('display_none');
+                gender.classList.add('display_none');
+                hairType.classList.add('display_none');
+                hair.classList.add('display_none');
+                bald.classList.remove('display_none');
+                bald.classList.add('category');
+                curly.classList.remove('display_none');
+                curly.classList.add('category');
+                wavy.classList.remove('display_none');
+                wavy.classList.add('category');
+                straight.classList.remove('display_none');
+                straight.classList.add('category');
+                buttonBack.classList.remove('button_back_default');
+                buttonBack.classList.add('button_back_visible');
+                buttonBack.classList.add('clickable');
+                break;
+            case "hair":
+                accessories.classList.add('display_none');
+                face.classList.add('display_none');
+                gender.classList.add('display_none');
+                hairType.classList.add('display_none');
+                hair.classList.add('display_none');
+                pinned.classList.remove('display_none');
+                pinned.classList.add('category');
+                loose.classList.remove('display_none');
+                loose.classList.add('category');
+                buttonBack.classList.remove('button_back_default');
+                buttonBack.classList.add('button_back_visible');
+                buttonBack.classList.add('clickable');
+                break;
+        }
+    }
+    
 })
 
 //Changing hints background-color - accessories
@@ -302,23 +367,6 @@ earrings.addEventListener('click', (event) => {
 }
 })
 
-//Face categories
-face.addEventListener('click', (event) => {
-    accessories.classList.add('display_none');
-    face.classList.add('display_none');
-    gender.classList.add('display_none');
-    hairType.classList.add('display_none');
-    hair.classList.add('display_none');
-    beard.classList.remove('display_none');
-    beard.classList.add('category');
-    glasses.classList.remove('display_none');
-    glasses.classList.add('category');
-    sunglasses.classList.remove('display_none');
-    sunglasses.classList.add('category');
-    buttonBack.classList.remove('button_back_default');
-    buttonBack.classList.add('button_back_visible');
-    buttonBack.classList.add('clickable');
-})
 
 beard.addEventListener('click', (event) => {
     glasses.classList.remove('clickable');
@@ -411,22 +459,6 @@ sunglasses.addEventListener('click', (event) => {
 })
 
 
-//Gender categories
-gender.addEventListener('click', (event) => {
-    accessories.classList.add('display_none');
-    face.classList.add('display_none');
-    gender.classList.add('display_none');
-    hairType.classList.add('display_none');
-    hair.classList.add('display_none');
-    male.classList.remove('display_none');
-    male.classList.add('category');
-    female.classList.remove('display_none');
-    female.classList.add('category');
-    buttonBack.classList.remove('button_back_default');
-    buttonBack.classList.add('button_back_visible');
-    buttonBack.classList.add('clickable');
-})
-
 male.addEventListener('click', (event) => {
     female.classList.remove('clickable');
     female.classList.add('non-clickable');
@@ -483,25 +515,6 @@ female.addEventListener('click', (event) => {
 }
 })
 
-//hairType categories
-hairType.addEventListener('click', (event) => {
-    accessories.classList.add('display_none');
-    face.classList.add('display_none');
-    gender.classList.add('display_none');
-    hairType.classList.add('display_none');
-    hair.classList.add('display_none');
-    bald.classList.remove('display_none');
-    bald.classList.add('category');
-    curly.classList.remove('display_none');
-    curly.classList.add('category');
-    wavy.classList.remove('display_none');
-    wavy.classList.add('category');
-    straight.classList.remove('display_none');
-    straight.classList.add('category');
-    buttonBack.classList.remove('button_back_default');
-    buttonBack.classList.add('button_back_visible');
-    buttonBack.classList.add('clickable');
-})
 
 bald.addEventListener('click', (event) => {
     curly.classList.remove('clickable');
@@ -629,22 +642,6 @@ straight.addEventListener('click', (event) => {
         actualCharacter.classList.add('overlay');
     }    
 }
-})
-
-//hair categories
-hair.addEventListener('click', (event) => {
-    accessories.classList.add('display_none');
-    face.classList.add('display_none');
-    gender.classList.add('display_none');
-    hairType.classList.add('display_none');
-    hair.classList.add('display_none');
-    pinned.classList.remove('display_none');
-    pinned.classList.add('category');
-    loose.classList.remove('display_none');
-    loose.classList.add('category');
-    buttonBack.classList.remove('button_back_default');
-    buttonBack.classList.add('button_back_visible');
-    buttonBack.classList.add('clickable');
 })
 
 pinned.addEventListener('click', (event) => {
